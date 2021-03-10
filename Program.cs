@@ -12,21 +12,43 @@ namespace generiskaKlasser_ovning
 
             dictionary.Add("apple", 10);
             dictionary.Add("cucumber", 20);
+            dictionary.Add("carrot", 101);
 
-            foreach (string key in dictionary.Keys)
+            while (true)
             {
-                System.Console.WriteLine(key + ": " + dictionary[key] + " coins");
+                foreach (string key in dictionary.Keys)
+                {
+                    System.Console.WriteLine(key + ": " + dictionary[key] + " coins");
+                }
+
+                System.Console.WriteLine("\n\nWhat to buy?\nType the desiered object");
+                string playerChoose = Console.ReadLine();
+
+                while (dictionary.ContainsKey(playerChoose) != true)
+                {
+                    System.Console.WriteLine("Item is not for purchase, please try again");
+                    playerChoose = Console.ReadLine();
+                }
+
+                if (dictionary[playerChoose] > playerCoins)
+                {
+                    System.Console.WriteLine("Item too expensive, you can not afford it");
+                }
+
+                else
+                {
+                    playerCoins -= dictionary[playerChoose];
+                    System.Console.WriteLine("Thanks for your purchase!");
+                }
+                
+                System.Console.WriteLine("Coins left: " + playerCoins);
+
+                System.Console.WriteLine("Enter N to stop program, or any other letter to continue");
+                if (Console.ReadLine() == "n")
+                {
+                    break;
+                }
             }
-
-            System.Console.WriteLine("\n\nWhat to buy?\nType the desiered object");
-
-            string playerChoose = Console.ReadLine();
-
-            playerCoins -= dictionary[playerChoose];
-
-            System.Console.WriteLine("Thanks for your purchase!\nCoins left: " + playerCoins);
-
-            Console.ReadLine();
         }
     }
 }
