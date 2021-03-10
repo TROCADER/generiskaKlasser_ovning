@@ -7,6 +7,11 @@ namespace generiskaKlasser_ovning
     {
         static void Main(string[] args)
         {
+            DictionaryShop();
+        }
+
+        private static void DictionaryShop()
+        {
             int playerCoins = 100;
             Dictionary<string, int> dictionary = new Dictionary<string, int>();
 
@@ -50,6 +55,11 @@ namespace generiskaKlasser_ovning
                 }
                 Console.Clear();
             }
+        }
+
+        private static void DictionaryElement()
+        {
+            
         }
     }
 }
