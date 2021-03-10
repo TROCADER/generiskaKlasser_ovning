@@ -48,6 +48,7 @@ namespace generiskaKlasser_ovning
                 {
                     break;
                 }
+                Console.Clear();
             }
         }
     }
